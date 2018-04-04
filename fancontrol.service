@@ -1,0 +1,15 @@
+[Unit]
+Description=Start fancontrol
+DefaultDependencies=no
+Before=local-fs-pre.target
+Wants=local-fs-pre.target
+ConditionPathExists=/root/nespifan/fancontrol
+
+[Service]
+Type=forking
+ExecStart=/root/nespifan/fancontrol.sh start 
+ExecStop=/root/nespifan/fancontrol.sh stop
+PIDFile=/var/run/fancontrol.pid
+
+[Install]
+WantedBy=sysinit.target
