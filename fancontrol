@@ -1,30 +1,22 @@
 #!/usr/bin/env python
 
-'''
-Control the Brightness of LED using PWM on Raspberry Pi
-http://www.electronicwings.com
-'''
-
 import RPi.GPIO as GPIO
 import os,sys
 from time import sleep
 
 pin = 16 # The pin ID, edit here to change it
-maxTMP = 65 # The maximum temperature in Celsius after which we trigger the fan
+maxTMP = 75 # The maximum temperature in Celsius after which we trigger the fan
 
 def getCPUtemperature():
     res = os.popen("/opt/vc/bin/vcgencmd measure_temp").readline()
     temp =(res.replace("temp=","").replace("'C\n",""))
-#    print("temp is {0}".format(temp)) #Uncomment here for testing
     return temp 
 
 def fanON(fullspeed):
-#    print("on")
     GPIO.output(pin, GPIO.HIGH)
     return()
 
 def fanOFF():
-#    print("off")
     GPIO.output(pin, GPIO.LOW) 
     return()
 
@@ -42,7 +34,6 @@ def setPin(mode): # A little redundant function but useful if you want to add lo
     return()
 
 try:
-#    setup() 
     GPIO.setwarnings(False)
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(pin, GPIO.OUT)
