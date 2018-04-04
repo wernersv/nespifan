@@ -44,3 +44,5 @@ service fancontrol stop
 
 ## Test
 sysbench --test=cpu --num-threads=4 --cpu-max-prime=200000 run
+
+![Not a beauty, but it works](https://lh3.googleusercontent.com/4NQ-dQ-IyJyMn202JjZYjtlcKQfyAVu73KcedgvhfBqd9mxn78p0T3LkHEkg8ufSqyxtEy-JVW1dt4EHP5XjPle-HxpXk3hO2iGZO1yjIOedkRbZQzUsJxRAz0P1e5iNzczOAoc5v4_XkD4r2erqTIOTagKw)
